@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import router from "./routes";
+import { useRoutes } from "react-router-dom";
+import TopBar from "./components/TopBar";
+import Sidebar from "./components/Sidebar";
+export default function App() {
+  const routes = useRoutes(router);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-[100%]">
+      <TopBar />
+      <div className="grid grid-cols-12 h-[91.3vh]">
+        <div className="col-span-2">
+          <Sidebar />
+        </div>
+        <div className="col-span-10">{routes}</div>
+      </div>
     </div>
   );
 }
-
-export default App;
