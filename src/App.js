@@ -12,7 +12,7 @@ export default function App() {
         <div className="col-span-2">
           <Sidebar />
         </div>
-        <div className="col-span-10">{routes}</div>
+        <div className="col-span-10 p-6">{routes}</div>
       </div>
     </div>
   );
